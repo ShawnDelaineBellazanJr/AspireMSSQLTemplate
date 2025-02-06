@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Models;
 
-namespace ProjectName.ApiService.Configurations
+namespace ProjectName.ServiceDefaults.Configurations
 {
     public static class SwaggerConfig
     {
@@ -16,19 +16,24 @@ namespace ProjectName.ApiService.Configurations
             {
                 c.SwaggerDoc("v1", new OpenApiInfo
                 {
-                    Title = "ProjectName API",
                     Version = "v1",
-                    Description = "API documentation for ProjectName",
+                    Title = "Aspire Portfolio API",
+                    Description = "An ASP.NET Core Web API for managing your portfolio",
+                    TermsOfService = new Uri("https://example.com/terms"),
                     Contact = new OpenApiContact
                     {
                         Name = "Your Name",
-                        Email = "your.email@example.com",
-                        Url = new Uri("https://github.com/yourprofile")
+                        Email = "your@email.com"
+                    },
+                    License = new OpenApiLicense
+                    {
+                        Name = "Use under MIT",
+                        Url = new Uri("https://example.com/license")
                     }
                 });
 
                 // Enable XML comments
-               
+
                 var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
                 c.IncludeXmlComments(xmlPath);
 

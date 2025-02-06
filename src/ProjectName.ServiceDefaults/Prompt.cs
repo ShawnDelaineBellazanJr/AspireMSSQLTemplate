@@ -1,4 +1,4 @@
-﻿namespace ProjectName.ApiService.Models
+﻿namespace ProjectName.ServiceDefaults
 {
     /// <summary>
     /// Represents an AI-generated prompt.
